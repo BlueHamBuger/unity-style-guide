@@ -587,6 +587,7 @@
 int helloWorld_ //局部变量
 int _helloWorld;//私有变量
 int helloWorld// 公有变量
+int m_hello;// 形参
 ```
 
 
@@ -616,7 +617,7 @@ int helloWorld// 公有变量
 <a name="bp-vars-naming-context"></a>
 ##### 3.2.1.5 考虑上下文 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-蓝图中的变量命名时需要考虑上下文环境，避免重复不必要的定义。
+变量命名时需要考虑上下文环境，避免重复不必要的定义。
 
 <a name="3.2.1.5e"></a>
 ###### 3.2.1.5e 例如:
@@ -625,12 +626,12 @@ int helloWorld// 公有变量
 
 **不好的命名**
 
-* `PlayerScore`
-* `PlayerKills`
-* `MyTargetPlayer`
-* `MyCharacterName`
-* `CharacterSkills`
-* `ChosenCharacterSkin`
+* `playerScore`
+* `playerKills`
+* `myTargetPlayer`
+* `myCharacterName`
+* `characterSkills`
+* `chosenCharacterSkin`
 
 这些变量的命名都很臃肿。因为这些变量都是属于一个角色类`layerCharacter`的，没必要在变量中再重复这一点。
 
@@ -651,11 +652,11 @@ int helloWorld// 公有变量
 
 原生类型的变量名中不应该包含变量类型名。
 
-例如：使用`Score`, `Kills`, 以及 `Description`，**不要**使用`ScoreFloat`, `FloatKills`, `DescriptionString`。
+例如：使用`score`, `kills`, 以及 `description`，**不要**使用`scoreFloat`, `floatKills`, `descriptionString`。
 
 但也有例外情况，当变量的含义包含了"多少个"这样的信息，**并且**仅用一个名字无法清晰的表达出这个含义时。
 
-比如：游戏中一个围墙生成器，需要有一个变量保存在X轴上的生成数量，那么需要使用`NumPosts` 或者 `PostsCount`这样的变量，因为仅仅使用`Posts`可能被误解为某个保存Post的数组
+比如：游戏中一个围墙生成器，需要有一个变量保存在X轴上的生成数量，那么需要使用`numPosts` 或者 `postsCount`这样的变量，因为仅仅使用`Posts`可能被误解为某个保存Post的数组
 
 <a name="3.2.1.7"></a>
 <a name="bp-vars-naming-complex"></a>
@@ -667,13 +668,13 @@ int helloWorld// 公有变量
 
 这些变量的名字应该包含数据类型名，但同时要考虑不要重复上下文。
 
-如果一个类中包拥有一个复杂变量的实例，比如一个`PlayerCharacter`中有另一个变量`Hat`，那么这个变量的名字就不需要包含变量类型了。
+如果一个类中包拥有一个复杂变量的实例，比如一个`PlayerCharacter`中有另一个变量`hat`，那么这个变量的名字就不需要包含变量类型了。
 
-例如: 使用 `Hat`、`Flag`以及 `Ability`，**不要**使用`MyHat`、`MyFlag` 和 `PlayerAbility`
+例如: 使用 `Hat`、`Flag`以及 `Ability`，**不要**使用`myHat`、`myFlag` 和 `playerAbility`
 
 但是，如果一个类并不拥有这个属性，那么就需要在这个属性的名字中包含有类型的名字了
 
-例如：一个类`Turret`用来顶一个炮塔，它拥有瞄准`PlayerCharacter`作为目标的能力，那么它内部会保存一个变量作为目标，名字应该是`TargetPlayer`，这个名字非常清楚的指明了这个变量的数据类型是什么。
+例如：一个类`Turret`用来顶一个炮塔，它拥有瞄准`PlayerCharacter`作为目标的能力，那么它内部会保存一个变量作为目标，名字应该是`targetPlayer`，这个名字非常清楚的指明了这个变量的数据类型是什么。
 
 
 <a name="3.2.1.8"></a>
