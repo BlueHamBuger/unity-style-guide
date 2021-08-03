@@ -584,8 +584,7 @@
 ##### 3.2.1.2 camelCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
 所有变量统一用 camelCase 通过 下划线区分私有 公有和局部变量,属性名使用 Pascal
 ```c#
-int helloWorld_ //局部变量
-int m_hello;// 形参
+int helloWorld_ //局部变量 和 // 形参
 private int _helloWorld;//私有变量
 public int helloWorld// 公有变量
 int HelloWorld{ //属性命名
