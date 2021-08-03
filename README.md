@@ -581,27 +581,13 @@
 
 <a name="3.2.1.2"></a>
 <a name="bp-var-naming-case"></a>
-##### 3.2.1.2 PascalCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
-
-所有非布尔类型的变量的大小写需要遵守[PascalCase](#terms-cases)规则。
-
-<a name="3.2.1.2e"></a>
-###### 3.2.1.2e 范例:
-
-* `Score`
-* `Kills`
-* `TargetPlayer`
-* `Range`
-* `CrosshairColor`
-* `AbilityID`
-
-<a name="3.2.1.3"></a>
-<a name="bp-var-bool-prefix"></a>
-##### 3.2.1.3 布尔变量需要前缀 `b`  ![#](https://img.shields.io/badge/lint-supported-green.svg)
-
-所有布尔类型变量需要遵守[PascalCase](#terms-cases)规则，但前面需要增加小写的`b`做前缀。
-
-例如: 用 `bDead` 和 `bEvil`, **不要** 使用`Dead` 和 `Evil`.
+##### 3.2.1.2 camelCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
+所有变量统一用 camelCase 通过 下划线区分私有 公有和局部变量
+```c#
+int helloWorld_ //局部变量
+int _helloWorld;//私有变量
+int helloWorld// 公有变量
+```
 
 
 <a name="3.2.1.4"></a>
@@ -758,17 +744,13 @@
 
 <a name="3.3.1"></a>
 <a name="bp-funcs-naming"></a>
-#### 3.3.1 函数命名
+#### 3.3.1 访问修饰
+```c#
+public void SendMsg(){} //公有
+private void _SendMsg(){} //私有
+```
 
-对于函数、事件以及事件派发器的命名极其重要，仅仅从一个名字本身，就有很多条件要考虑，比如说：
 
-* 是纯虚函数吗？?
-* 是状态查询函数吗?
-* 是事件相应函数吗?
-* 是远程调用函数吗?
-* 函数的目的是什么？
-
-如果命名得当，这些问题甚至更多问题的答案会在名字中体现出来。
 
 <a name="3.3.1.1"></a>
 <a name="bp-funcs-naming-verbs"></a>
